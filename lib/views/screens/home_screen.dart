@@ -8,6 +8,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:provider/provider.dart';
 import '../../providers/auth_provider.dart';
 import '../../providers/home_provider.dart';
+import 'chat_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -89,11 +90,25 @@ class _HomeScreenState extends State<HomeScreen> {
       if (user.id == currentUserId.toString()) {
         return const SizedBox.shrink();
       } else {
-        return Container(
-          child: TextButton(
-            child: Row(
-              children: <Widget>[
-                Material(
+        return InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ChatScreen(
+                  id: currentUserId.toString(),
+                  peerId: user.id,
+                  peerName: user.name,
+                  peerImgUrl: user.photoUrl,
+                ),
+              ),
+            );
+          },
+          child: Card(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                leading: Material(
                   child: user.photoUrl.isNotEmpty
                       ? Image.network(
                           user.photoUrl,
@@ -131,36 +146,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   borderRadius: const BorderRadius.all(Radius.circular(25)),
                   clipBehavior: Clip.hardEdge,
                 ),
-                Flexible(
-                  child: Container(
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          child: Text(
-                            user.name,
-                            maxLines: 1,
-                          ),
-                          alignment: Alignment.centerLeft,
-                          margin: const EdgeInsets.fromLTRB(10, 0, 0, 5),
-                        ),
-                      ],
-                    ),
-                    margin: const EdgeInsets.only(left: 20),
-                  ),
+                title: Text(
+                  user.name,
+                  maxLines: 1,
                 ),
-              ],
-            ),
-            onPressed: () {},
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-              shape: MaterialStateProperty.all<OutlinedBorder>(
-                const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                ),
+                trailing: const Icon(Icons.chat),
               ),
             ),
           ),
-          margin: const EdgeInsets.only(bottom: 10, left: 5, right: 5),
         );
       }
     } else {
