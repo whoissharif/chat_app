@@ -8,6 +8,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 
 import 'providers/auth_provider.dart';
+import 'providers/chat_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,6 +32,11 @@ class MyApp extends StatelessWidget {
         ),
         Provider<HomeProvider>(
           create: (_) => HomeProvider(
+            firebaseFirestore: FirebaseFirestore.instance,
+          ),
+        ),
+        Provider<ChatProvider>(
+          create: (_) => ChatProvider(
             firebaseFirestore: FirebaseFirestore.instance,
           ),
         ),

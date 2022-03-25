@@ -1,13 +1,10 @@
 import 'package:chat_app/models/chat_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 
 class ChatProvider {
   final FirebaseFirestore firebaseFirestore;
-  final FirebaseStorage firebaseStorage;
 
-  ChatProvider(
-      {required this.firebaseFirestore, required this.firebaseStorage});
+  ChatProvider({required this.firebaseFirestore});
 
   Stream<QuerySnapshot> getChatStream(String groupChatId) {
     return firebaseFirestore
