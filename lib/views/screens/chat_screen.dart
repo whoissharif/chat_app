@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../../providers/chat_provider.dart';
+import '../widgets/bottom_sheet_item.dart';
 import '../widgets/chat_app_bar_content.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -94,8 +95,9 @@ class _ChatScreenState extends State<ChatScreen> {
                 Padding(
                   padding: const EdgeInsets.only(right: 20.0),
                   child: Text(
-                    DateFormat.MMMd().add_jm().format(DateTime.fromMillisecondsSinceEpoch(
-                        int.parse(chatModel.timestamp))),
+                    DateFormat.MMMd().add_jm().format(
+                        DateTime.fromMillisecondsSinceEpoch(
+                            int.parse(chatModel.timestamp))),
                     style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 12,
@@ -272,7 +274,9 @@ class _ChatScreenState extends State<ChatScreen> {
             child: SizedBox(
               child: IconButton(
                 icon: const Icon(Icons.add),
-                onPressed: () {},
+                onPressed: () {
+                  showMoreChatOptions();
+                },
               ),
             ),
             color: Colors.white,
@@ -309,6 +313,67 @@ class _ChatScreenState extends State<ChatScreen> {
       decoration: const BoxDecoration(
           border: Border(top: BorderSide(color: Colors.grey, width: 0.5)),
           color: Colors.white),
+    );
+  }
+
+  Future<dynamic> showMoreChatOptions() {
+    return showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      builder: (_) {
+        return Container(
+          height: MediaQuery.of(context).size.height * .28,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                kAppBarGradPrimary,
+                kAppBarGradSecondary,
+              ],
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 30.0),
+            child: GridView.count(
+              crossAxisCount: 4,
+              children: const [
+                BottomSheetItem(
+                  icon: Icons.camera_alt,
+                  text: 'camera',
+                ),
+                BottomSheetItem(
+                  icon: Icons.money,
+                  text: 'Send Money',
+                ),
+                BottomSheetItem(
+                  icon: Icons.attachment_outlined,
+                  text: 'Attachment',
+                ),
+                BottomSheetItem(
+                  icon: Icons.games,
+                  text: 'Games',
+                ),
+                BottomSheetItem(
+                  icon: Icons.location_pin,
+                  text: 'Location',
+                ),
+                BottomSheetItem(
+                  icon: Icons.call,
+                  text: 'Schedule a call',
+                ),
+                BottomSheetItem(
+                  icon: Icons.music_note,
+                  text: 'Caller tune',
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
