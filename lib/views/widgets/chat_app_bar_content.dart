@@ -1,3 +1,4 @@
+import 'package:chat_app/constants/color_constants.dart';
 import 'package:flutter/material.dart';
 
 import 'app_bar_button.dart';
@@ -24,8 +25,8 @@ class ChatAppBarContent extends StatelessWidget {
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
           colors: [
-            Color.fromARGB(255, 109, 158, 250),
-            Color.fromARGB(255, 151, 109, 250),
+            kAppBarGradPrimary,
+            kAppBarGradSecondary,
           ],
         ),
         boxShadow: [

@@ -1,3 +1,4 @@
+import 'package:chat_app/constants/color_constants.dart';
 import 'package:chat_app/models/chat_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -64,10 +65,21 @@ class _ChatScreenState extends State<ChatScreen> {
                   child: Container(
                     child: Text(
                       chatModel.content,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                     padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
                     decoration: BoxDecoration(
-                        color: Colors.blue,
+                        gradient: const LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.centerRight,
+                          colors: [
+                            kAppBarGradPrimary,
+                            kAppBarGradSecondary,
+                          ],
+                        ),
                         borderRadius: BorderRadius.circular(8)),
                     margin: const EdgeInsets.only(
                         bottom: 5, right: 10, top: 10, left: 50),
@@ -82,7 +94,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 Padding(
                   padding: const EdgeInsets.only(right: 20.0),
                   child: Text(
-                    DateFormat.jms().format(DateTime.fromMillisecondsSinceEpoch(
+                    DateFormat.MMMd().add_jm().format(DateTime.fromMillisecondsSinceEpoch(
                         int.parse(chatModel.timestamp))),
                     style: const TextStyle(
                       color: Colors.grey,
@@ -141,7 +153,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       ),
                       padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
                       decoration: BoxDecoration(
-                          color: Colors.grey.shade400,
+                          color: kLeftChatBg,
                           borderRadius: BorderRadius.circular(8)),
                       margin: const EdgeInsets.only(left: 10, right: 50),
                     ),
@@ -156,7 +168,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Text(
-                      DateFormat.jms().format(
+                      DateFormat.MMMd().add_jm().format(
                           DateTime.fromMillisecondsSinceEpoch(
                               int.parse(chatModel.timestamp))),
                       style: const TextStyle(
