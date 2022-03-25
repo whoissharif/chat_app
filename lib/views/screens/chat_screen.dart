@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../../providers/chat_provider.dart';
+import '../widgets/chat_app_bar_content.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({
@@ -197,17 +198,21 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.peerName),
-      ),
-      body: Stack(
-        children: [
-          Column(children: [
-            buildListMessage(),
-            buildInput(),
-          ]),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(70),
+          child: ChatAppBarContent(
+              imgUrl: widget.peerImgUrl, name: widget.peerName),
+        ),
+        body: Stack(
+          children: [
+            Column(children: [
+              buildListMessage(),
+              buildInput(),
+            ]),
+          ],
+        ),
       ),
     );
   }
@@ -261,7 +266,6 @@ class _ChatScreenState extends State<ChatScreen> {
             color: Colors.white,
           ),
 
-          // Edit text
           Flexible(
             child: SizedBox(
               child: TextField(
