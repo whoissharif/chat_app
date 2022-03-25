@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "927538866828",
+    "project_id": "chat-app-605a8",
+    "storage_bucket": "chat-app-605a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927538866828:android:8864fe1e850a27fa5269a9",
+        "android_client_info": {
+          "package_name": "com.whoissharif.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927538866828-dmjrdv1k5hbr6pti33rdej3bgt4b29ks.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.whoissharif.chat_app",
+            "certificate_hash": "1be4848b59272afcc8b9d7b92391bc150bb2e7c6"
+          }
+        },
+        {
+          "client_id": "927538866828-cg6qljnjjfmqmfilmvkssgvu1u2648v2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7YxrX5_GT6bel1Q_mZKnUv2h9whz4VPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927538866828-cg6qljnjjfmqmfilmvkssgvu1u2648v2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
