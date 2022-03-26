@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:chat_app/models/user_model.dart';
 import 'package:chat_app/views/screens/sign_in_screen.dart';
+import 'package:chat_app/views/widgets/home_app_bar_content.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -45,38 +46,50 @@ class _HomeScreenState extends State<HomeScreen> {
     log(currentUserId.toString());
 
     return Scaffold(
-      appBar: AppBar(
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('Chat Time'),
-            Text(
-              'Signed in as $userName',
-              style: const TextStyle(
-                fontSize: 12,
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: TextButton(
-              onPressed: () {
-                authProvider.handleSignOut();
-                Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => const SignInScreen()),
-                  (Route<dynamic> route) => false,
-                );
-              },
-              child: const Text(
-                'Sign out',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
-        ],
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(110),
+        child: HomeAppBarContent(
+            name: userName != null ? userName! : '',
+            onSignedOut: () {
+              authProvider.handleSignOut();
+              Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => const SignInScreen()),
+                (Route<dynamic> route) => false,
+              );
+            }),
       ),
+      // AppBar(
+      //   title: Column(
+      //     crossAxisAlignment: CrossAxisAlignment.start,
+      //     children: [
+      //       const Text('Chat Time'),
+      //       Text(
+      //         'Signed in as $userName',
+      //         style: const TextStyle(
+      //           fontSize: 12,
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      //   actions: [
+      //     Padding(
+      //       padding: const EdgeInsets.only(right: 8.0),
+      //       child: TextButton(
+      //         onPressed: () {
+      //           authProvider.handleSignOut();
+      //           Navigator.of(context).pushAndRemoveUntil(
+      //             MaterialPageRoute(builder: (context) => const SignInScreen()),
+      //             (Route<dynamic> route) => false,
+      //           );
+      //         },
+      //         child: const Text(
+      //           'Sign out',
+      //           style: TextStyle(color: Colors.white),
+      //         ),
+      //       ),
+      //     ),
+      //   ],
+      // ),
       body: StreamBuilder<QuerySnapshot>(
         stream: homeProvider.getStreamFireStore(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
