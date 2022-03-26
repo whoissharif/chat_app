@@ -44,13 +44,11 @@ class SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(Icons.message),
-            SizedBox(height: 20),
-            Container(
+          children: const [
+            SizedBox(
               width: 20,
               height: 20,
-              child: const CircularProgressIndicator(),
+              child: CircularProgressIndicator(),
             ),
           ],
         ),

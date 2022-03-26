@@ -6,7 +6,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 import '../utils/storage_handler.dart';
 
-
 enum Status {
   uninitialized,
   authenticated,
@@ -28,7 +27,6 @@ class AuthProvider extends ChangeNotifier {
     required this.googleSignIn,
     required this.firebaseFirestore,
   });
-
 
   Future<bool> isLoggedIn() async {
     bool isLoggedIn = await googleSignIn.isSignedIn();
@@ -70,11 +68,14 @@ class AuthProvider extends ChangeNotifier {
             'chattingWith': null
           });
           await StorageHandler().setStorageKey("id", firebaseUser.uid);
+          await StorageHandler()
+              .setStorageKey("name", firebaseUser.displayName!);
         } else {
           // Already sign up, just get data from firestore
           DocumentSnapshot documentSnapshot = documents[0];
-          UserModel userChat = UserModel.fromDocument(documentSnapshot);
-          await StorageHandler().setStorageKey("id", userChat.id);
+          UserModel userModel = UserModel.fromDocument(documentSnapshot);
+          await StorageHandler().setStorageKey("id", userModel.id);
+          await StorageHandler().setStorageKey("name", userModel.name);
         }
         _status = Status.authenticated;
         notifyListeners();

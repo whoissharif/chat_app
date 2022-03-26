@@ -1,4 +1,5 @@
 import 'package:chat_app/constants/color_constants.dart';
+import 'package:chat_app/constants/style_constants.dart';
 import 'package:flutter/material.dart';
 
 import 'app_bar_button.dart';
@@ -16,19 +17,12 @@ class ChatAppBarContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      height: 110,
+      padding: const EdgeInsets.only(left: 10, right: 10, top: 40),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20)),
-        gradient: const LinearGradient(
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
-          colors: [
-            kAppBarGradPrimary,
-            kAppBarGradSecondary,
-          ],
-        ),
+        gradient: appGradient,
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),

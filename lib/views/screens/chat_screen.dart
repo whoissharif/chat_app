@@ -2,8 +2,10 @@ import 'package:chat_app/constants/color_constants.dart';
 import 'package:chat_app/models/chat_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+import '../../constants/style_constants.dart';
 import '../../providers/chat_provider.dart';
 import '../widgets/bottom_sheet_item.dart';
 import '../widgets/chat_app_bar_content.dart';
@@ -73,14 +75,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                     padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
                     decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.centerRight,
-                          colors: [
-                            kAppBarGradPrimary,
-                            kAppBarGradSecondary,
-                          ],
-                        ),
+                        gradient: appGradient,
                         borderRadius: BorderRadius.circular(8)),
                     margin: const EdgeInsets.only(
                         bottom: 5, right: 10, top: 10, left: 50),
@@ -212,21 +207,19 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(70),
-          child: ChatAppBarContent(
-              imgUrl: widget.peerImgUrl, name: widget.peerName),
-        ),
-        body: Stack(
-          children: [
-            Column(children: [
-              buildListMessage(),
-              buildInput(),
-            ]),
-          ],
-        ),
+    return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(110),
+        child:
+            ChatAppBarContent(imgUrl: widget.peerImgUrl, name: widget.peerName),
+      ),
+      body: Stack(
+        children: [
+          Column(children: [
+            buildListMessage(),
+            buildInput(),
+          ]),
+        ],
       ),
     );
   }
@@ -327,14 +320,7 @@ class _ChatScreenState extends State<ChatScreen> {
         return Container(
           height: MediaQuery.of(context).size.height * .28,
           decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                kAppBarGradPrimary,
-                kAppBarGradSecondary,
-              ],
-            ),
+            gradient: appGradient,
           ),
           child: Padding(
             padding: const EdgeInsets.only(top: 30.0),

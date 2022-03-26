@@ -22,14 +22,15 @@ class _HomeScreenState extends State<HomeScreen> {
   late AuthProvider authProvider;
   String? currentUserId;
   final storage = const FlutterSecureStorage();
+  String? userName;
 
   @override
   void initState() {
     super.initState();
 
     Future.delayed(Duration.zero, () async {
-      log('init e dhukse');
       currentUserId = (await storage.read(key: "id"))!;
+      userName = await storage.read(key: "name");
       if (mounted) {
         setState(() {});
       }
@@ -45,17 +46,35 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Chat Time'),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Chat Time'),
+            Text(
+              'Signed in as $userName',
+              style: const TextStyle(
+                fontSize: 12,
+              ),
+            ),
+          ],
+        ),
         actions: [
-          IconButton(
+          Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: TextButton(
               onPressed: () {
                 authProvider.handleSignOut();
                 Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => SignInScreen()),
+                  MaterialPageRoute(builder: (context) => const SignInScreen()),
                   (Route<dynamic> route) => false,
                 );
               },
-              icon: const Icon(Icons.logout))
+              child: const Text(
+                'Sign out',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
         ],
       ),
       body: StreamBuilder<QuerySnapshot>(
@@ -65,8 +84,9 @@ class _HomeScreenState extends State<HomeScreen> {
             if ((snapshot.data?.docs.length ?? 0) > 0) {
               return ListView.builder(
                 padding: const EdgeInsets.all(10),
-                itemBuilder: (context, index) =>
-                    buildUserTile(context, snapshot.data?.docs[index]),
+                itemBuilder: (context, index) {
+                  return buildUserTile(context, snapshot.data?.docs[index]);
+                },
                 itemCount: snapshot.data?.docs.length,
               );
             } else {
