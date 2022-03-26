@@ -2,7 +2,6 @@ import 'package:chat_app/constants/color_constants.dart';
 import 'package:chat_app/models/chat_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../../constants/style_constants.dart';
@@ -207,19 +206,24 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(110),
-        child:
-            ChatAppBarContent(imgUrl: widget.peerImgUrl, name: widget.peerName),
-      ),
-      body: Stack(
-        children: [
-          Column(children: [
-            buildListMessage(),
-            buildInput(),
-          ]),
-        ],
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(110),
+          child: ChatAppBarContent(
+              imgUrl: widget.peerImgUrl, name: widget.peerName),
+        ),
+        body: Stack(
+          children: [
+            Column(children: [
+              buildListMessage(),
+              buildInput(),
+            ]),
+          ],
+        ),
       ),
     );
   }
@@ -266,7 +270,11 @@ class _ChatScreenState extends State<ChatScreen> {
           Material(
             child: SizedBox(
               child: IconButton(
-                icon: const Icon(Icons.add),
+                icon: const Icon(
+                  Icons.add,
+                  size: 30,
+                  color: Colors.blue,
+                ),
                 onPressed: () {
                   showMoreChatOptions();
                 },
@@ -276,15 +284,29 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
 
           Flexible(
-            child: SizedBox(
+            child: Container(
+              padding: const EdgeInsets.all(5),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
               child: TextField(
                 onSubmitted: (value) {
                   onSendMessage(textEditingController.text);
                 },
                 style: const TextStyle(fontSize: 15),
                 controller: textEditingController,
-                decoration: const InputDecoration.collapsed(
+                decoration: InputDecoration(
                   hintText: 'Type your message...',
+                  contentPadding: const EdgeInsets.all(10),
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: const BorderSide(
+                      width: 0,
+                      style: BorderStyle.none,
+                    ),
+                  ),
+                  fillColor: const Color.fromARGB(255, 217, 232, 240),
+                  suffixIcon: const Icon(Icons.emoji_emotions),
                 ),
               ),
             ),
@@ -293,7 +315,10 @@ class _ChatScreenState extends State<ChatScreen> {
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 8),
               child: IconButton(
-                icon: const Icon(Icons.send),
+                icon: const Icon(
+                  Icons.send,
+                  color: Colors.blue,
+                ),
                 onPressed: () => onSendMessage(textEditingController.text),
               ),
             ),

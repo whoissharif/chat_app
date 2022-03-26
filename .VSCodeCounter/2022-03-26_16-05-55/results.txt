@@ -1,0 +1,118 @@
+Date : 2022-03-26 16:05:55
+Directory : e:\ShodaiMama Projects - Sharif\Projects\chat_app
+Total : 53 files,  2185 codes, 273 comments, 325 blanks, all 2783 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| Dart       |         18 |      1,193 |         46 |        117 |      1,356 |
+| C++        |         11 |        408 |         80 |        132 |        620 |
+| JSON       |          4 |        227 |          0 |          3 |        230 |
+| XML        |          9 |        123 |         46 |         11 |        180 |
+| Groovy     |          3 |         94 |          3 |         22 |        119 |
+| HTML       |          1 |         80 |         18 |          7 |        105 |
+| YAML       |          2 |         27 |         79 |         20 |        126 |
+| Markdown   |          2 |         13 |          0 |          9 |         22 |
+| Swift      |          1 |         12 |          0 |          2 |         14 |
+| Properties |          2 |          8 |          1 |          2 |         11 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                            | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                               |         53 |      2,185 |        273 |        325 |      2,783 |
+| android                                                                                                         |         13 |        211 |         48 |         33 |        292 |
+| android\app                                                                                                     |          9 |        167 |         47 |         22 |        236 |
+| android\app\src                                                                                                 |          7 |         62 |         44 |          9 |        115 |
+| android\app\src\debug                                                                                           |          1 |          4 |          3 |          1 |          8 |
+| android\app\src\main                                                                                            |          5 |         54 |         38 |          7 |         99 |
+| android\app\src\main\res                                                                                        |          4 |         26 |         32 |          6 |         64 |
+| android\app\src\main\res\drawable                                                                               |          1 |          4 |          7 |          2 |         13 |
+| android\app\src\main\res\drawable-v21                                                                           |          1 |          4 |          7 |          2 |         13 |
+| android\app\src\main\res\values                                                                                 |          1 |          9 |          9 |          1 |         19 |
+| android\app\src\main\res\values-night                                                                           |          1 |          9 |          9 |          1 |         19 |
+| android\app\src\profile                                                                                         |          1 |          4 |          3 |          1 |          8 |
+| android\gradle                                                                                                  |          1 |          5 |          1 |          1 |          7 |
+| android\gradle\wrapper                                                                                          |          1 |          5 |          1 |          1 |          7 |
+| ios                                                                                                             |          7 |        222 |          2 |          9 |        233 |
+| ios\Runner                                                                                                      |          7 |        222 |          2 |          9 |        233 |
+| ios\Runner\Assets.xcassets                                                                                      |          3 |        148 |          0 |          4 |        152 |
+| ios\Runner\Assets.xcassets\AppIcon.appiconset                                                                   |          1 |        122 |          0 |          1 |        123 |
+| ios\Runner\Assets.xcassets\LaunchImage.imageset                                                                 |          2 |         26 |          0 |          3 |         29 |
+| ios\Runner\Base.lproj                                                                                           |          2 |         61 |          2 |          2 |         65 |
+| lib                                                                                                             |         17 |      1,179 |         36 |        110 |      1,325 |
+| lib\constants                                                                                                   |          2 |         18 |          0 |          6 |         24 |
+| lib\models                                                                                                      |          2 |         61 |          0 |         12 |         73 |
+| lib\providers                                                                                                   |          3 |        139 |          2 |         25 |        166 |
+| lib\utils                                                                                                       |          1 |         23 |          0 |          6 |         29 |
+| lib\views                                                                                                       |          8 |        888 |         34 |         56 |        978 |
+| lib\views\screens                                                                                               |          4 |        660 |         34 |         38 |        732 |
+| lib\views\widgets                                                                                               |          4 |        228 |          0 |         18 |        246 |
+| test                                                                                                            |          1 |         14 |         10 |          7 |         31 |
+| web                                                                                                             |          2 |        115 |         18 |          8 |        141 |
+| windows                                                                                                         |         10 |        407 |         80 |        131 |        618 |
+| windows\flutter                                                                                                 |          2 |         11 |          9 |         11 |         31 |
+| windows\runner                                                                                                  |          8 |        396 |         71 |        120 |        587 |
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                        | language   | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\README.md                                                     | Markdown   |         10 |          0 |          7 |         17 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\analysis_options.yaml                                         | YAML       |          3 |         23 |          4 |         30 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\android\app\build.gradle                                      | Groovy     |         58 |          3 |         13 |         74 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\android\app\google-services.json                              | JSON       |         47 |          0 |          0 |         47 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\android\app\src\debug\AndroidManifest.xml                     | XML        |          4 |          3 |          1 |          8 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\android\app\src\main\AndroidManifest.xml                      | XML        |         28 |          6 |          1 |         35 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\android\app\src\main\res\drawable-v21\launch_background.xml   | XML        |          4 |          7 |          2 |         13 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\android\app\src\main\res\drawable\launch_background.xml       | XML        |          4 |          7 |          2 |         13 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\android\app\src\main\res\values-night\styles.xml              | XML        |          9 |          9 |          1 |         19 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\android\app\src\main\res\values\styles.xml                    | XML        |          9 |          9 |          1 |         19 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\android\app\src\profile\AndroidManifest.xml                   | XML        |          4 |          3 |          1 |          8 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\android\build.gradle                                          | Groovy     |         28 |          0 |          5 |         33 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\android\gradle.properties                                     | Properties |          3 |          0 |          1 |          4 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\android\gradle\wrapper\gradle-wrapper.properties              | Properties |          5 |          1 |          1 |          7 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\android\settings.gradle                                       | Groovy     |          8 |          0 |          4 |         12 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\ios\Runner\AppDelegate.swift                                  | Swift      |         12 |          0 |          2 |         14 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\ios\Runner\Assets.xcassets\AppIcon.appiconset\Contents.json   | JSON       |        122 |          0 |          1 |        123 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\ios\Runner\Assets.xcassets\LaunchImage.imageset\Contents.json | JSON       |         23 |          0 |          1 |         24 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\ios\Runner\Assets.xcassets\LaunchImage.imageset\README.md     | Markdown   |          3 |          0 |          2 |          5 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\ios\Runner\Base.lproj\LaunchScreen.storyboard                 | XML        |         36 |          1 |          1 |         38 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\ios\Runner\Base.lproj\Main.storyboard                         | XML        |         25 |          1 |          1 |         27 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\ios\Runner\Runner-Bridging-Header.h                           | C++        |          1 |          0 |          1 |          2 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\constants\color_constants.dart                            | Dart       |          8 |          0 |          3 |         11 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\constants\style_constants.dart                            | Dart       |         10 |          0 |          3 |         13 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\main.dart                                                 | Dart       |         50 |          0 |          5 |         55 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\models\chat_model.dart                                    | Dart       |         33 |          0 |          6 |         39 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\models\user_model.dart                                    | Dart       |         28 |          0 |          6 |         34 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\providers\auth_provider.dart                              | Dart       |         90 |          2 |         13 |        105 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\providers\chat_provider.dart                              | Dart       |         34 |          0 |          7 |         41 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\providers\home_provider.dart                              | Dart       |         15 |          0 |          5 |         20 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\utils\storage_handler.dart                                | Dart       |         23 |          0 |          6 |         29 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\views\screens\chat_screen.dart                            | Dart       |        352 |          1 |         16 |        369 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\views\screens\home_screen.dart                            | Dart       |        154 |         32 |         11 |        197 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\views\screens\sign_in_screen.dart                         | Dart       |        103 |          0 |          4 |        107 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\views\screens\splash_screen.dart                          | Dart       |         51 |          1 |          7 |         59 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\views\widgets\app_bar_button.dart                         | Dart       |         24 |          0 |          4 |         28 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\views\widgets\bottom_sheet_item.dart                      | Dart       |         30 |          0 |          4 |         34 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\views\widgets\chat_app_bar_content.dart                   | Dart       |        109 |          0 |          5 |        114 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\lib\views\widgets\home_app_bar_content.dart                   | Dart       |         65 |          0 |          5 |         70 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\pubspec.yaml                                                  | YAML       |         24 |         56 |         16 |         96 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\test\widget_test.dart                                         | Dart       |         14 |         10 |          7 |         31 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\web\index.html                                                | HTML       |         80 |         18 |          7 |        105 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\web\manifest.json                                             | JSON       |         35 |          0 |          1 |         36 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\windows\flutter\generated_plugin_registrant.cc                | C++        |          6 |          4 |          5 |         15 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\windows\flutter\generated_plugin_registrant.h                 | C++        |          5 |          5 |          6 |         16 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\windows\runner\flutter_window.cpp                             | C++        |         45 |          4 |         13 |         62 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\windows\runner\flutter_window.h                               | C++        |         20 |          5 |          9 |         34 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\windows\runner\main.cpp                                       | C++        |         30 |          4 |         10 |         44 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\windows\runner\resource.h                                     | C++        |          9 |          6 |          2 |         17 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\windows\runner\utils.cpp                                      | C++        |         53 |          2 |         10 |         65 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\windows\runner\utils.h                                        | C++        |          8 |          6 |          6 |         20 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\windows\runner\win32_window.cpp                               | C++        |        183 |         15 |         48 |        246 |
+| e:\ShodaiMama Projects - Sharif\Projects\chat_app\windows\runner\win32_window.h                                 | C++        |         48 |         29 |         22 |         99 |
+| Total                                                                                                           |            |      2,185 |        273 |        325 |      2,783 |
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
